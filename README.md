@@ -5,4 +5,4 @@ made for Hitarth ;)
 ```bash
 git clone https://github.com/TarushS/ScriptCTFenv
 chmod +x script.sh
-sudo bash script.sh```
+sudo bash script.sh
