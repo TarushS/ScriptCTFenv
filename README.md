@@ -1,7 +1,8 @@
-##CTF Env
+## CTF Env
 made for Hitarth ;)
 
-#Installation
+# Installation
+```bash
 git clone https://github.com/TarushS/ScriptCTFenv
 chmod +x script.sh
-sudo bash script.sh
+sudo bash script.sh```
