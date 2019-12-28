@@ -1,9 +1,17 @@
 #!/bin/bash
 cd /opt/
 git clone https://github.com/TarushS/ctfenv
+cd ctfenv
+mv picossh.sh ..
+mv finish.sh ..
+cd ..
+rm -r ctfenv
 cd ~
 rm .bashrc
 git clone https://github.com/TarushS/bashrc
+cd bashrc
+mv .bashrc ..
+rm -r bashrc
 mkdir tools
 cd tools
 git clone https://github.com/niklasb/libc-database
