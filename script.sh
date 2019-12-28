@@ -1,5 +1,4 @@
 #!/bin/bash
-sudo su
 cd /opt/
 git clone https://github.com/TarushS/ctfenv
 cd ~
