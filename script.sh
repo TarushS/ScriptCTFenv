@@ -11,6 +11,7 @@ rm .bashrc
 git clone https://github.com/TarushS/bashrc
 cd bashrc
 mv .bashrc ..
+cd ..
 rm -r bashrc
 mkdir tools
 cd tools
@@ -20,10 +21,10 @@ chmod +x get
 ./get
 cd ..
 git clone https://github.com/JonathanSalwan/ROPgadget
-apt install python
-apt install python-pip
-apt install python3
-apt install python3-pip
+apt install python -y
+apt install python-pip -y
+apt install python3 -y
+apt install python3-pip -y
 pip install capstone
 cd ROPgadget
 python setup.py install
@@ -36,27 +37,27 @@ git clone https://gitlab.com/Anonimbus/encore
 cd ..
 cd tools
 apt-get update
-apt-get install python3 python3-pip python3-dev git libssl-dev libffi-dev build-essential
+apt-get install python3 python3-pip python3-dev git libssl-dev libffi-dev build-essential -y
 python3 -m pip install --upgrade pip
 python3 -m pip install --upgrade git+https://github.com/Gallopsled/pwntools.git@dev3
-apt install exiftool
-apt install ghex
-apt install binwalk
-apt install steghide
+apt install exiftool -y
+apt install ghex -y
+apt install binwalk -y
+apt install steghide -y
 mkdir stegsolve
 cd stegsolve
 wget http://www.caesum.com/handbook/Stegsolve.jar -O stegsolve.jar
-apt-get install zbar-tools
-apt install stegsnow
-apt install pngcheck
-apt install fcrackzip
+apt-get install zbar-tools -y
+apt install stegsnow -y
+apt install pngcheck -y
+apt install fcrackzip -y
 cd ..
 wget -O /usr/bin/jsteg https://github.com/lukechampine/jsteg/releases/download/v0.1.0/jsteg-linux-amd64
 chmod +x /usr/bin/jsteg
 wget -O /usr/bin/slink https://github.com/lukechampine/jsteg/releases/download/v0.2.0/slink-linux-amd64
 chmod +x /usr/bin/slink
-apt install ruby
+apt install ruby -y
 gem install zsteg
-apt install wine-stable
+apt install wine -y
 cd
 source .bashrc
