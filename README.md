@@ -1,5 +1,5 @@
 ## CTF Env
-made for Hitarth ;)
+For CTF starters
 
 # Installation
 ```bash
