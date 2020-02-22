@@ -20,13 +20,13 @@ chmod +x script.sh
 ```
 
 # Docker automated script valid args:
-```bash
+```
 build           : Is used for building the docker image
 install_build   : Is used to install docker and build docker image
 init            : It builds docker image and runs container and gives shell
 shell           : Gives shell to existing docker conainer
 run             : Runs docker container if image exists
 stop            : Stops the docker container
-delete			: Delete the image
+delete		: Delete the image
 help            : you are reading this right now
 ```
