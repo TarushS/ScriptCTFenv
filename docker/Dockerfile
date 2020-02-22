@@ -11,18 +11,47 @@ apt-get install -y build-essential jq strace ltrace curl wget rubygems gcc dnsut
 pip install capstone requests r2pipe && \
 pip3 install keystone-engine unicorn capstone ropper && \
 python3 -m pip install --upgrade git+https://github.com/Gallopsled/pwntools.git@dev && \
-mkdir tools && cd tools && \
-git clone https://github.com/JonathanSalwan/ROPgadget && \
-git clone https://github.com/radare/radare2 && cd radare2 && sys/install.sh && \
-cd .. && git clone https://github.com/xct/ropstar && \
-git clone https://github.com/pwndbg/pwndbg && cd pwndbg && ./setup.sh && \
-cd .. && git clone https://github.com/niklasb/libc-database && cd libc-database && ./get && \
-gem install one_gadget && \
-cd /opt/ && git clone https://github.com/TarushS/ctfenv && cd ctfenv && mv picossh.sh .. && mv finish.sh .. && cd .. && rm -r ctfenv && \
-cd ~ && rm .bashrc && git clone https://github.com/TarushS/bashrc && cd bashrc && mv .bashrc .. && cd .. && rm -r bashrc && \
-cd ~/tools && mkdir stegsolve && cd stegsolve && wget http://www.caesum.com/handbook/Stegsolve.jar -O stegsolve.jar && cd .. && \
-apt-get install zbar-tools exiftool ghex binwalk steghide stegsnow pngcheck fcrackzip ruby zsteg wine -y && \
+mkdir tools
+WORKDIR /root/tools/
+RUN git clone https://github.com/JonathanSalwan/ROPgadget
+WORKDIR /root/tools/ROPgadget
+RUN python setup.py install
+WORKDIR /root/tools/
+RUN git clone https://github.com/radare/radare2
+WORKDIR /root/tools/radare2
+RUN sys/install.sh
+WORKDIR /root/tools/
+RUN git clone https://github.com/xct/ropstar && \
+git clone https://github.com/pwndbg/pwndbg
+WORKDIR /root/tools/pwndbg/
+RUN ./setup.sh
+WORKDIR /root/tools/
+RUN git clone https://github.com/niklasb/libc-database
+WORKDIR /root/tools/libc-database
+RUN chmod +x get && ./get && \
+gem install one_gadget
+
+WORKDIR /opt/
+RUN  git clone https://github.com/TarushS/ctfenv 
+WORKDIR /opt/ctfenv/
+RUN mv picossh.sh /opt/ && mv finish.sh /opt/
+WORKDIR /opt/
+RUN rm -r ctfenv
+WORKDIR /root/tools/
+RUN mkdir stegsolve
+WORKDIR /root/tools/stegsolve
+RUN wget http://www.caesum.com/handbook/Stegsolve.jar -O stegsolve.jar
+WORKDIR /root/tools/
+RUN apt-get install zbar-tools exiftool ghex binwalk steghide stegsnow pngcheck fcrackzip ruby wine -y && \
 wget -O /usr/bin/jsteg https://github.com/lukechampine/jsteg/releases/download/v0.1.0/jsteg-linux-amd64 && chmod +x /usr/bin/jsteg && \
-wget -O /usr/bin/slink https://github.com/lukechampine/jsteg/releases/download/v0.2.0/slink-linux-amd64 && chmod +x /usr/bin/slink && \
-cd && mkdir CTF && cd CTF && git clone https://gitlab.com/Anonimbus/encore && \
-cd && source .bashrc
+wget -O /usr/bin/slink https://github.com/lukechampine/jsteg/releases/download/v0.2.0/slink-linux-amd64 && chmod +x /usr/bin/slink
+WORKDIR /root/
+RUN mkdir CTF
+WORKDIR /root/CTF/
+RUN git clone https://gitlab.com/Anonimbus/encore
+WORKDIR /root/
+RUN rm .bashrc && git clone https://github.com/TarushS/bashrc
+WORKDIR /root/bashrc
+RUN mv .bashrc /root
+WORKDIR /root/
+RUN rm -r bashrc
