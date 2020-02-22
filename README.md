@@ -1,5 +1,6 @@
 ## CTF Env
 For CTF starters
+PS. if anything happens, feel free to create a issue
 
 # Installation Script
 ```bash
@@ -9,37 +10,23 @@ chmod +x script.sh
 sudo bash script.sh
 ```
 
-# Install Docker and the container using one script
+# Docker automated script usage:
 ```bash
 git clone https://github.com/TarushS/ScriptCTFenv
 cd ScriptCTFenv
 cd docker
-chmod +x docker_install_build.sh
-sudo bash docker_install_build.sh
+chmod +x script.sh
+./script.sh <valid_args>
 ```
 
-# Install Docker on linux
+# Docker automated script valid args:
 ```bash
-git clone https://github.com/TarushS/ScriptCTFenv
-cd ScriptCTFenv
-cd docker
-chmod +x docker_install.sh
-sudo bash docker_install.sh
+build           : Is used for building the docker image
+install_build   : Is used to install docker and build docker image
+init            : It builds docker image and runs container and gives shell
+shell           : Gives shell to existing docker conainer
+run             : Runs docker container if image exists
+stop            : Stops the docker container
+delete			: Delete the image
+help            : you are reading this right now
 ```
-
-# Installation Docker container (if docker installed)
-```bash
-docker build -t ctf .
-docker run --rm -v $PWD:/pwd --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -d --name ctf -i ctf .
-docker exec -it ctf /bin/bash
-```
-
-# Installation docker container using script. (if docker installed)
-```bash
-git clone https://github.com/TarushS/ScriptCTFenv
-cd ScriptCTFenv
-cd docker
-chmod +x build_image.sh
-sudo bash build_image.sh
-```
-

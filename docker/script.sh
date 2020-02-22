@@ -49,33 +49,67 @@ help () {
 	cat .help
 }
 
+delete () {
+	docker images
+	echo "to delete the container, run:"
+	echo "docker image rm <container_id>"
+	echo "with <container_id> as the container_id. NOTE: do not include <>"
+}
+
 arg=$1
+val=1
 
 if [[ $arg == "build" ]]
 then
 	build
+	val=2
 elif [[ $arg == "install_build" ]]
 then
 	install_build
+	val=2
 elif [[ $arg == "shell" ]]
 then
 	shell
+	val=2
 elif [[ $arg == "init" ]]
 then
 	init
+	val=2
 elif [[ $arg == "run" ]]
 then
 	run
+	val=2
 elif [[ $arg == "stop" ]]
 then
 	stop
+	val=2
 elif [[ $arg == "help" ]]
 then
 	help
+	val=2
+elif [[ $arg == "delete" ]]
+then
+	delete
+	val=2
 elif [[ $arg == "" ]]
 then
 	echo "wrong arguments specified please run the following:"
 	cat .help
 fi
-echo "wrong arguments specified please run the following:"
-cat .help
+
+if [[ $val = 1 ]]
+then
+	echo "wrong arguments specified please run the following:"
+	cat .help
+	echo ""
+else
+	echo ""
+fi
+
+
+
+
+
+
+
+
