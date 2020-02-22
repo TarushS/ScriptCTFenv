@@ -13,16 +13,18 @@ sudo bash script.sh
 ```bash
 git clone https://github.com/TarushS/ScriptCTFenv
 cd ScriptCTFenv
-chmod +x script.sh
-sudo bash script.sh
+cd docker
+chmod +x docker_install_build.sh
+sudo bash docker_install_build.sh
+```
 
 # Install Docker on linux
 ```bash
 git clone https://github.com/TarushS/ScriptCTFenv
 cd ScriptCTFenv
 cd docker
-chmod +x docker_install_build.sh
-sudo bash docker_install_build.sh
+chmod +x docker_install.sh
+sudo bash docker_install.sh
 ```
 
 # Installation Docker container (if docker installed)
