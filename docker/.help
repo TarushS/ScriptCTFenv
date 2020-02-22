@@ -1,0 +1,7 @@
+Build		: Is used for building the docker image
+install_build	: Is used to install docker and build docker image
+init		: It builds docker image and runs container and gives shell
+shell		: Gives shell to existing docker conainer
+run		: Runs docker container if image exists
+stop		: Stops the docker container
+help		: you are reading this right now
