@@ -23,6 +23,7 @@ cd ..
 git clone https://github.com/JonathanSalwan/ROPgadget
 apt install python -y
 apt install python-pip -y
+pip install pwntools
 apt install python3 -y
 apt install python3-pip -y
 pip install capstone
@@ -33,13 +34,11 @@ git clone https://github.com/xct/ropstar
 cd ..
 mkdir CTF
 cd CTF
-git clone https://gitlab.com/Anonimbus/encore
 cd ..
 cd tools
 apt-get update
 apt-get install python3 python3-pip python3-dev git libssl-dev libffi-dev build-essential -y
-python3 -m pip install --upgrade pip
-python3 -m pip install --upgrade git+https://github.com/Gallopsled/pwntools.git@dev3
+pip3 install pwntools
 apt install exiftool -y
 apt install ghex -y
 apt install binwalk -y
