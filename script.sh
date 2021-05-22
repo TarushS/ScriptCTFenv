@@ -45,7 +45,7 @@ if uname -r |grep -qi 'microsoft' ; then
   echo -e "alias explorer=\"explorer.exe\"\nalias nautilus=\"explorer.exe .\"" >> ~/.bash_aliases
   echo "export GPG_TTY=$(tty)" >> ~/.bashrc
   wget https://cdn.discordapp.com/attachments/688712511289426075/845718503016497162/dir_colors -O ~/.dir_colors
-  echo "eval \"$(dircolors ~/.dir_colors)\""
+  echo "eval \"$(dircolors ~/.dir_colors)\"" >> ~/.bashrc
 fi
 
 source ~/.bashrc
