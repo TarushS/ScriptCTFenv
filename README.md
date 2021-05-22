@@ -7,7 +7,7 @@ PS. if anything happens, feel free to create a issue
 git clone https://github.com/TarushS/ScriptCTFenv
 cd ScriptCTFenv
 chmod +x script.sh
-sudo bash script.sh
+bash script.sh
 ```
 
 # Docker automated script usage:
