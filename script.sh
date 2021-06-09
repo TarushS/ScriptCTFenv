@@ -9,7 +9,7 @@ pip3 install pwntools
 pip install capstone
 
 # Installing Tools
-mkdir tools
+mkdir randirona
 
 ## ROPGadget
 git clone https://github.com/JonathanSalwan/ROPgadget && cd ROPgadget
