@@ -11,6 +11,15 @@ pip install capstone
 # Installing Tools
 mkdir tools
 
+
+## Binary exploitation tools
+
+## GDB peda+gef+pwndbg
+git clone https://github.com/soaringk/gdb-peda-pwndbg-gef.git
+cd gdb-peda-pwndbg-gef
+./install.sh
+cd ..
+
 ## ROPGadget
 git clone https://github.com/JonathanSalwan/ROPgadget && cd ROPgadget
 python setup.py install
@@ -31,11 +40,19 @@ chmod +x /usr/bin/jsteg
 wget -O /usr/bin/slink https://github.com/lukechampine/jsteg/releases/download/v0.2.0/slink-linux-amd64
 chmod +x /usr/bin/slink
 
-## GDB peda+gef+pwndbg
-git clone https://github.com/soaringk/gdb-peda-pwndbg-gef.git
-cd gdb-peda-pwndbg-gef
-./install.sh
-cd ..
+## Pentesting tools
+
+## Nmap
+sudo apt install nmap -y
+
+## Gobuster
+cd ~/tools/
+mkdir gobuster && cd gobuster
+wget https://github.com/OJ/gobuster/releases/download/v3.1.0/gobuster-linux-amd64.7z
+7z e gobuster-linux-amd64.7z
+chmod +x gobuster
+echo "alias gobuster=\"~/tools/gobuster/gobuster\"" >> ~/.bashrc
+
 
 ## Misc
 if uname -r |grep -qi 'microsoft' ; then
