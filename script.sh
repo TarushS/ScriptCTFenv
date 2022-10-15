@@ -32,7 +32,7 @@ gem install zsteg
 ## Stegsolve
 mkdir stegsolve && cd stegsolve
 wget http://www.caesum.com/handbook/Stegsolve.jar -O stegsolve.jar
-cd..
+cd ..
 
 ## Jsteg
 wget -O /usr/bin/jsteg https://github.com/lukechampine/jsteg/releases/download/v0.1.0/jsteg-linux-amd64
